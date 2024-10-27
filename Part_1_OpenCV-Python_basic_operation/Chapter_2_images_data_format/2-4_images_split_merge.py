@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-from fontTools.misc.psOperators import ps_boolean
 import numpy as np
 import cv2 as cv
 
@@ -9,15 +8,15 @@ def images_split_merge():
 
      # (1) cv.split 实现图像通道的拆分
      bImg, gImg, rImg = cv.split(img)
-     print(bImg)
+     # print(bImg)
 
      # (2) cv.merge 实现图像通道的合并
      imgMerge = cv.merge((bImg, gImg, rImg))
-     print(imgMerge)
+     # print(imgMerge)
 
      # (3) Numpy 拼接实现图像通道的合并
      imgStack = np.stack((bImg, gImg, rImg), axis=2)
-     print(imgStack)
+     # print(imgStack)
 
      # cv.imshow("bImg", bImg)
      # cv.imshow("gImg", gImg)
@@ -58,7 +57,7 @@ def images_split_merge():
      plt.imshow(cv.cvtColor(imgGR, cv.COLOR_BGR2RGB))
 
      plt.tight_layout()
-     # plt.show()
+     plt.show()
 
 if __name__ == '__main__':
      images_split_merge()

@@ -20,7 +20,10 @@ def gray_to_color():
     titles = ['GRAY', 'HOT', 'PINK', 'RAINBOW', 'HSV', 'Turbo']
     for i in range(len(images)):
         plt.subplot(2, 3, i + 1),plt.title(titles[i]),plt.axis('off')
-        plt.imshow(images[i])
+        if i ==0:
+            plt.imshow(images[i], cmap='gray')
+        elif i != 0:
+            plt.imshow(cv.cvtColor(images[i], cv.COLOR_BGR2RGB))
     plt.tight_layout()
     plt.show()
 
@@ -62,7 +65,6 @@ def gray_to_color2():
     plt.imshow(cv.cvtColor(composite, cv.COLOR_BGR2RGB))
     plt.tight_layout()
     plt.show()
-
 
 if __name__ == '__main__':
     # gray_to_color()
