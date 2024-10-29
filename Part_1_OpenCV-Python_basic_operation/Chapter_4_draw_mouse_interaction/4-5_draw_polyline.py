@@ -31,7 +31,7 @@ def draw_polyline():
 
     cv.fillConvexPoly(img4, points1, (0, 0, 255))
     cv.fillConvexPoly(img4, points2, (0, 0, 255))  # 不能绘制存在自相交的多边形
-    cv.fillConvexPoly(img4, points3, (0, 0, 255))  # 可以绘制凹多边形，弹药慎用
+    cv.fillConvexPoly(img4, points3, (0, 0, 255))  # 可以绘制凹多边形，慎用
 
     # cv.imshow('img1', img1)
     # cv.imshow('img2', img2)
