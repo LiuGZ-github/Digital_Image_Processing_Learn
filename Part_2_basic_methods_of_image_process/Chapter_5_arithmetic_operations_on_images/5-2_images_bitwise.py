@@ -4,6 +4,7 @@ from matplotlib import pyplot as plt
 
 def images_bitwise():
     img = cv.imread("../../statics/images/Lena.tif", flags=0)
+    print(img[0][0])
 
     # 加载或生成水印信息
     binary = np.zeros(img.shape[:2], np.uint8)
@@ -26,6 +27,7 @@ def images_bitwise():
     plt.imshow(imgMark, cmap='gray')
     plt.subplot(133), plt.title("3. Extracted watermark"), plt.axis('off')
     plt.imshow(extract, cmap='gray')
+    print(extract)
 
     plt.tight_layout()
     plt.show()
