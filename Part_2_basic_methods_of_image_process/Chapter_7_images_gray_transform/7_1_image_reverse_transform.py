@@ -7,7 +7,8 @@ def image_reverse_transform():
     gray = cv.cvtColor(img,cv.COLOR_BGR2GRAY)
 
     # LUT 快速查表
-    transTable = np.array([(255 - i) for i in range(256)]).astype("uint8")
+    transTable = np.array([(255 - i) for i in range
+    (256)]).astype("uint8")
     imgInv = cv.LUT(img, transTable)
     grayInv = cv.LUT(gray, transTable)
     cv.imshow("Image", img)

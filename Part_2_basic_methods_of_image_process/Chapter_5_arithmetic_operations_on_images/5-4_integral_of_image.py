@@ -30,7 +30,7 @@ def integral_image():
 
     # (3) 函数cv.boxFilter实现均值滤波
     timeBegin = cv.getTickCount()
-    kernel = np.ones(k, np.float32) / (k * k)
+    # kernel = np.ones(k, np.float32) / (k * k)
     imgBoxF = cv.boxFilter(img, -1, (k, k))
     timeEnd = cv.getTickCount()
     print((timeEnd - timeBegin) / cv.getTickFrequency())

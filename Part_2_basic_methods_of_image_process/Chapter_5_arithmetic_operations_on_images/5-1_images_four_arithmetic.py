@@ -1,9 +1,9 @@
 import numpy as np
-import matplotlib.pyplot as plt
 import cv2 as cv
 
 def images_add():
     img1 = cv.imread("../../statics/images/Lena.tif")
+
     img2 = cv.imread("../../statics/images/Fig0301.png")
     h, w = img1.shape[:2]
     img3 = cv.resize(img2, (w, h))
@@ -12,18 +12,17 @@ def images_add():
 
     # (1) 图像与常数相加
     value = 100
-    imgAddV = cv.add(img1, value)
-    imgAddG = cv.add(gray, value)
+    imgAddV = cv.add(img1, np.ones_like(img1) * value)
+    imgAddG = cv.add(gray, np.ones_like(gray) * value)
     cv.imshow("imgAddV", imgAddV)
     cv.imshow("imgAddG", imgAddG)
 
     # (2) 图像与标量相加
-    scalar = (100, 40, 50, 60)
-    imgAddS = cv.add(img1, scalar)
-    imgAddGS = cv.add(gray, scalar)
+    scalar = (100, 0, 0, 0)
+    imgAddS = cv.add(img1, np.array(scalar))
+    imgAddGS = cv.add(gray, np.array(scalar))
     cv.imshow("imgAddS", imgAddS)
     cv.imshow("imgAddGS", imgAddGS)
-
 
     cv.waitKey(0)
     cv.destroyAllWindows()
@@ -85,6 +84,6 @@ def images_weight_add():
 
 
 if __name__ == '__main__':
-    # images_add()
+    images_add()
     # mask_images_process()
-    images_weight_add()
+    # images_weight_add()
